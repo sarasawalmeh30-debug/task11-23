@@ -1,0 +1,54 @@
+
+<p>Store Name: {{storeName}}</p>
+<p>Store Description: {{storeDescription}}</p>
+<p>Store Address: {{storeAddress}}</p>
+<p>Total Products: {{totalProducts}}</p>
+<p>Is Store Open: {{isStoreOpen}}</p>
+<p>Currency: {{currency}}</p>
+
+<button (click)="display()">Load Items</button>
+
+<div style="display: flex; gap: 50px;">
+
+  <div>
+    <h3>Product Names</h3>
+
+    <div *ngIf="showItems">
+      <p *ngFor="let product of productNames">
+        {{product}}
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <h3>Product Prices</h3>
+
+    <div *ngIf="showItems">
+      <p *ngFor="let price of productPrices">
+        {{price}} {{currency}}
+      </p>
+    </div>
+  </div>
+
+</div>
+<div>{{storeStatus}}</div>
+<br>
+<h2>Featured Product</h2>
+
+<p>Product Name: {{featuredProduct[0].name}}</p>
+
+<p>Original Price: ${{featuredProduct[0].price}}</p>
+
+<p>Discount: {{discountPercentage}}%</p>
+
+<p>Final Price: ${{finalPrice}}</p>
+<br>
+<h2>Store Summary</h2>
+
+<p>Total Products: {{Totalnumproducts}}</p>
+
+<p>Most Expensive Product: ${{Mostexpensiveproductprice}}</p>
+
+<p>Cheapest Product: ${{Cheapestproductprice}}</p>
+
+<p>Total Value of Products: ${{Totalvalueofallproductprices}}</p>
